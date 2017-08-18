@@ -1,4 +1,8 @@
-// pingPongNumbersList will push ping-pong numbers list into array
+/*
+	pingPongNumbersList will push ping-pong 
+	numbers list into array after replacing
+	it with ping, pong & pingpong
+*/
 var pingPongNumbersList = function(number) {
 	var pingpongArray = [];
 	for(var num=1; num <= number; num++){
@@ -15,7 +19,12 @@ var pingPongNumbersList = function(number) {
 	return pingpongArray;
 }
 
-//reversePingPongList will call pingPongNumbersList and reverse it
-/*var reversePingPongList = function(pingpongArray) {
-	pingpongArray = pingpongArray.reverse();
-}*/
+/*
+	reversePingPongList will call pingPongNumbersList 
+	and reverse it
+*/
+var reversePingPongList = function(number) {
+	pingpongArray = pingPongNumbersList(number);
+	pingpongArray.reverse();
+	return pingpongArray;
+}
