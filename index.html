@@ -10,13 +10,13 @@
 	<script type="text/javascript" src='js/userInterfaceLogic.js'></script>
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron">
+	<div class="container main">
+		<div class="jumbotron banner">
 			<h1>Ping-Pong</h1>			
 		</div>
 		<div class="content">
 			<div class="info col-sm-3">
-				<h4>About Ping Pong</h4>
+				<h4 class="infoTitle">About Ping Pong</h4>
 				<p>Created By:</p>
 				<span>Richa Shaurbh</span>
 				<p>GitHUb Username/URL</p>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="mainConent col-sm-9">
 				<h3>Let's Play</h3>
-				<p>Rules:</p>
+				<p><b>Rules:</b></p>
 				<p>Ping Pong will count up to your number from 1 with following exceptions:</p>
 				<ul>
 					<li>Numbers divisible by 3 are replaced with "ping"</li>
@@ -34,8 +34,11 @@
 					<li>Numbers divisible by 15 are replaced with "ping-pong"</li>
 				</ul>
 				<label>Enter your number here:</label>
-				<input type="text" name="userInput">
-				<input type="submit" class="pingPong" value="Ping Pong!">
+				<input type="text" name="userInput" class="userInput">
+				<div class="buttons">
+					<input type="submit" class="pingPong" value="Ping Pong!">
+					<input type="submit" class="reversePingPong" value="Reverse Ping Pong!">
+				</div>
 				<div class="pingPongResult">
 					<ul></ul>
 				</div>

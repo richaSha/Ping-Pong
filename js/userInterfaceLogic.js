@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	 $(".content").css("height", ($(".container").height()-$(".banner").outerHeight(true)));
 	/*
 		pingPongResultUI will call 
 		pingPongNumbersList, reversePingPongList
@@ -6,46 +7,57 @@ $(document).ready(function() {
 		result list
 	*/
 	var pingPongResultUI = function(pingPongNumber, resultList, reverse){
+		var pingPongList = [];
 		if(!isNaN(pingPongNumber)){
 			if(!reverse){
-				pinPongList = pingPongNumbersList(pingPongNumber);
+				pingPongList = pingPongNumbersList(pingPongNumber);
 			}else{
-				pinPongList = reversePingPongList(pingPongNumber);
+				pingPongList = reversePingPongList(pingPongNumber);
 			}
-			for(num in pinPongList){
-				resultList.append(`<li> ${pinPongList[num]} </li>`)
+			for(num in pingPongList){
+				resultList.append(`<li> ${pingPongList[num]} </li>`)
 			}
+			$(".info").css("height", ($(".mainConent").height()));
 		}else {
-			alert('warning');
+			alert('Please enter only numbers');
+			$('input:text').val("");
+		}
+	}
+
+	/*
+		Its taking data from user input and calling 
+		pingPongResultUI with 
+		user input and reverse value
+	*/
+	var getAndSetPingPongList = function(reverse){
+		var pingPongNumber = $('input:text').val();
+		var resultList = $('.pingPongResult ul');
+		$('.pingPongResult ul li').remove();
+		if(reverse){
+			pingPongResultUI(pingPongNumber, resultList,true);
+		}else {
+			pingPongResultUI(pingPongNumber, resultList,false);
 		}
 	}
 
 	/*
 		on click ping pong button calling 
-		pingPongResultUI with 
-		user input and reverse true 
+		getAndSetPingPongList with 
+		reverse false 
 	*/
 	$('input.pingPong').click(function(event) {
 		event.preventDefault();
-		var pinPongList = [];
-		var pingPongNumber = $('input:text').val();
-		var resultList = $('.pingPongResult ul');
-		$('.pingPongResult ul li').remove();
-		pingPongResultUI(pingPongNumber, resultList,false);
+		getAndSetPingPongList(false);
 	})
 
 	/*
-		on click ping pong reverse button calling 
-		pingPongResultUI with 
-		user input and reverse true 
+		on click ping pong button calling 
+		getAndSetPingPongList with 
+		reverse true 
 	*/
 	$('input.reversePingPong').click(function(event) {
 		event.preventDefault();
-		var pinPongList = [];
-		var pingPongNumber = $('input:text').val();
-		var resultList = $('.pingPongResult ul');
-		$('.pingPongResult ul li').remove();
-		pingPongResultUI(pingPongNumber, resultList,true);
+		getAndSetPingPongList(true);
 	})
 
 	/*

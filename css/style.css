@@ -1,0 +1,48 @@
+.main {
+	padding: 0 !important;
+	border: 1px solid #ccc;
+	border-radius: 2rem;
+	height: 99vh;
+	background: #e2e0e0;
+	color: #4a4949;
+	position: relative;
+	background-image: url(../img/wallpaper.jpg);
+}
+.banner{
+	width: 100%;
+	background-image: url(../img/banner2.jpg);
+	background-blend-mode: luminosity;
+	color: #fff !important;
+	text-align: center;
+	font-family: sans-serif;
+} 
+.content {
+	overflow: auto;
+
+}
+.info {
+	background: #6d6d6d;
+	border-radius: 0 1rem 0 0;
+	color: #b5b5b5;
+	height: 100%;
+}
+.info p {
+	margin: 2.1rem 0 0 !important;
+	font-weight: bold;
+}
+.info span {
+	margin-bottom: 1rem;
+}
+.userInput{
+	border: 1px solid #9d9d9d;
+	border-radius: 0.5rem;
+	display: block;
+	margin: 3vh 0 0 40vh;
+}
+.buttons{
+	display: block;
+	margin: 3vh 0 0 40vh;
+}
+.pingPongResult li {
+	color:#1b1b1b
+}
